@@ -1,18 +1,22 @@
+body {
+  height: calc(100svh - 4rem);
+  display: grid;
+  overflow: hidden;
+}
 .wheel {
-  border: 2px solid black;
+  margin: auto;
+  border: .12em solid black;
   border-radius: 50%;
-  margin-left: 50px;
-  position: absolute;
-  height: 55vw;
-  width: 55vw;
-  max-width: 500px;
+  position: relative;
+  height: 35svw;
   max-height: 500px;
+  aspect-ratio: 1;
+  background: lightblue;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
 .line {
   background-color: black;
   width: 50%;
@@ -22,7 +26,6 @@
   left: 50%;
   transform-origin: 0% 0%;
 }
-
 .line:nth-of-type(2) {
   transform: rotate(60deg);
 }
@@ -38,17 +41,15 @@
 .line:nth-of-type(6) {
   transform: rotate(300deg);
 }
-
 .cabin {
   background-color: red;
-  width: 20%;
-  height: 20%;
   position: absolute;
-  border: 2px solid;
+  width: 15%;
+  aspect-ratio: 1;
   transform-origin: 50% 0%;
+  border: .12em solid;
   animation: cabins 10s ease-in-out infinite;
 }
-
 .cabin:nth-of-type(1) {
   right: -8.5%;
   top: 50%;
@@ -73,7 +74,11 @@
   right: 17%;
   top: 7%;
 }
-
+#goBack {
+  position: fixed;
+  bottom: 2em;
+  right: 1em;
+}
 @keyframes wheel {
    0% {
      transform: rotate(0deg);
